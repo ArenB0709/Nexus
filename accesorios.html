@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda de accesorios y cargadores para consolas retro.">
+    <meta name="keywords" content="accesorios, cargadores, consolas, retro, tienda">
+    <meta name="author" content="Nexus Retro">
+    <title>Nexus Retro - Accesorios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Raleway:wght@400&family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #0a0f29;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        header {
+            background-color: #1a1d3d;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            color: #00c1ff;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        nav {
+            background-color: #10142d;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-toggle {
+            background-color: #00c1ff;
+            color: white;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            display: none;
+            background-color: #1a1d3d;
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            color: #00c1ff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .dropdown a:hover {
+            background-color: #8a66d1;
+        }
+
+        .product-category {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .led-effect {
+            animation: rgbChange 2s infinite;
+            font-weight: bold;
+        }
+
+        @keyframes rgbChange {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { color: violet; }
+        }
+
+        .products-dropdown {
+            display: none;
+            background-color: #1a1d3d;
+            padding: 10px 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .product {
+            background-color: #1a1d3d;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            width: 220px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #10142d;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        footer p {
+            color: #ffffff;
+        }
+
+        footer a {
+            color: #00c1ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: #00c1ff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-content p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nexus Retro</h1>
+</header>
+
+<nav>
+    <button class="nav-toggle" onclick="toggleDropdown()">Menu</button>
+    <div class="dropdown" id="dropdown-menu">
+        <div class="product-category">
+            <a href="#" onclick="toggleProductsDropdown(event)" style="color: #00c1ff;">Productos</a>
+            <div class="products-dropdown" id="products-dropdown" style="display: none;">
+                <a href="nuevas-consolas.html">Consolas y Videojuegos Nuevas</a>
+                <a href="juegos-digitales.html">Juegos Digitales</a>
+                <a href="juegos-fisicos.html">Juegos Físicos</a>
+                <a href="tarjetas-regalo.html">Tarjetas de Regalo y Suscripciones</a>
+                <a href="accesorios.html">Accesorios y Cargadores</a>
+                <a href="servicio-mantenimiento.html">Servicio de Mantenimiento</a>
+                <a href="productos.html" class="led-effect">Todos los Productos</a>
+            </div>
+        </div>
+        <a href="carrito.html">Carrito</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="portal-pagos.html">Portal de Pagos</a>
+    </div>
+</nav>
+
+<section class="main-content">
+    <h2>Lista de Accesorios</h2>
+    <div class="product-list">
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Accesorio 1">
+            <h3>Cargador Rápido</h3>
+            <p>Precio: $300 MXN</p>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Accesorio 2">
+            <h3>Funda Protectora</h3>
+            <p>Precio: $150 MXN</p>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Accesorio 3">
+            <h3>Controlador Inalámbrico</h3>
+            <p>Precio: $600 MXN</p>
+        </div>
+    </div>
+</section>
+
+<div class="pagination">
+    <a href="accesorios1.html">1</a>
+    <a href="accesorios2.html">2</a>
+    <a href="accesorios3.html">3</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Nexus Retro - Todos los derechos reservados</p>
+    <div>
+        <a href="priv.html">Política de Privacidad</a>
+        <a href="faq.html">FAQs</a>
+        <a href="soporte.html">Soporte al Cliente</a>
+        <a href="portal-pagos.html">Portal de Pago</a>
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+</footer>
+
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleProductsDropdown(event) {
+        event.preventDefault();
+        const dropdown = document.getElementById('products-dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
